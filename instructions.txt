@@ -1,0 +1,62 @@
+=== NAMYAN / NECROPOLIS — GitHub Instructions ===
+
+SITE: https://nam-yan.github.io/Necropolis/
+REPO: https://github.com/Nam-yan/Necropolis
+
+=== HOW TO PUSH CHANGES ===
+
+After editing files locally, run these commands in the
+project folder (D:\assortments\web retardation):
+
+1. See what changed:
+   git status
+
+2. Stage all changes:
+   git add .
+
+3. Commit with a message:
+   git commit -m "what you changed"
+
+4. Push to GitHub:
+   git push
+
+That's it — GitHub Pages automatically redeploys
+within a minute or two.
+
+=== FILE STRUCTURE ===
+
+index.html       — Homepage (was front.html)
+projects.html    — Project listing (6 projects)
+store.html       — Store page
+newfears.html    — Bunker Tee product page
+participate.html — Participate page
+about.html       — About page
+newsletter.html  — Newsletter page
+donate.html      — Support/Donate page
+pose.html        — Pose/loader page
+
+styles.css       — Main styles
+crt.css          — CRT overlay theme
+lcd.css          — LCD theme
+carousel.js      — Carousel script
+outside.js       — External interactions script
+open.js          — Open/click script
+
+fonts/           — Custom fonts (PixelOperator, Cthulhumbus)
+*.png / *.jpg    — Images
+*.json           — JSON data files
+
+=== CUSTOM DOMAIN (if set up) ===
+
+A CNAME file in the repo root tells GitHub which
+domain to use. Your registrar points DNS to GitHub's
+Pages IPs (185.199.108.153, etc.) or CNAMEs to
+nam-yan.github.io.
+
+=== NOTES ===
+
+- index.html is the default page served by GitHub Pages
+- All links use relative paths (not root-relative /)
+- nav logo links back to index.html
+- projects.html links to /projects/... and /sessions/...
+  (these paths work if subpages exist at that path)
