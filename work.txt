@@ -1,0 +1,43 @@
+# NAMYAN Site Cleanup
+
+## Goal
+Clean up and rebrand a forked SFPC site to NAMYAN. Fix CSS, HTML, JS, remove cruft, consolidate themes.
+
+## Progress
+
+### Done
+- Deleted unused assets: kys.json, tweaker.json, zom.json, horse-bones.png, centi.jfif, blackrat.stl, format.psd, fundraiser.css, jquery-3.6.0.min.js
+- Removed stale @import fundraiser.css from crt.css and lcd.css
+- Fixed crt.css: border: px → border: 1px
+- Consolidated @font-face from 8 rules → 3 (Cthulhumbus Arcade, PixelOperator, PixelOperatorMono)
+- Updated all CSS font-family variables and inline HTML font refs
+- Stripped ~450 lines of unused SFPC styles from styles.css (Shopify buy buttons, breadcrumb, website-grid, supporters, fixed-apply/fixed-support, section selector, definition-marquee, etc.)
+- Trimmed lcd.css from 353→172 lines (kept sfpc + alpha themes only)
+- Cleaned crt.css from 479→296 lines (removed season overrides: spring-2022, cocoon-2021, fallwinter-2122, codesocieties-20, sex-ed, etc. + Shopify refs)
+- Fixed all 5 HTML pages: added <!DOCTYPE html>, <html>, fixed head structure, rebranded OG/Twitter URLs to namyan.org, removed jQuery and Adobe Fonts includes, fixed nesting issues
+
+### Done
+- Rewrote outside.js: removed all jQuery, now pure vanilla JS (~55 direct $() calls → querySelector/classList)
+- Created stubs: carousel.js, open.js, about.html, newsletter.html, participate.html, donate.html
+- Restored Hershey dual-weight @font-face trick (bold=display font, normal=body font) for proper visual variety
+- Restored alpha theme font names (Geneva 9, Arastin Pro, DIN Alternate, Ductus) as aliases to 3 font files
+- Restored .website-grid square grid CSS (was accidentally deleted)
+- Added "Wooble" fisheye toggle (bottom right) with SVG displacement filter + perspective transform, persisted to localStorage
+- Fixed mode toggle bug: leading slashes in href paths broke CRT/LCD switching, now uses relative paths
+- Removed duplicate mode text logic from outside.js
+- Fixed body background to use var(--background) so content area changes color with CRT/LCD mode
+- Switched secondary body font from PixelOperator.ttf → PixelOperator8.ttf
+- Fixed inline font-family references from deleted 'Cthulhumbus Arcade' → 'Geneva 9'
+- Fixed .grid-1 layout: added flex-wrap + changed to flex-start for proper card wrapping
+- Changed .grid-4 to use flex: 1 1 calc(25%) so store (2 items) fills row at 50% each
+- Moved outside.js back to end of <body> so DOM elements exist when script runs
+- Updated all sfpc.study email → namyan@namyan.org
+- Added <!DOCTYPE html> and <html> to all stub pages
+- Fixed stray </p> tags in store.html and projects.html
+
+### Final Stats (current)
+- styles.css: 1331 lines
+- lcd.css: 172 lines
+- crt.css: 296 lines
+- outside.js: 416 lines (0 jQuery)
+- HTML pages: all rebranded to NAMYAN with proper doctype/nesting, all fonts working

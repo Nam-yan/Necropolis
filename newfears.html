@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>NAMYAN</title>
+  <link rel="shortcut icon" type="image/png" href="mouse.png">
+  <link rel="icon" type="image/png" href="gmouse.png">
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <meta name="title" content="NAMYAN">
+  <meta name="description" content="NAMYAN">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://namyan.org/">
+  <meta property="og:title" content="NAMYAN">
+  <meta property="og:description" content="NAMYAN">
+  <meta property="og:image" content="meta.jpg">
+
+  <!-- Twitter Cards -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://namyan.org/">
+  <meta property="twitter:title" content="NAMYAN">
+  <meta property="twitter:description" content="NAMYAN">
+  <meta property="twitter:image" content="meta.jpg">
+
+  <!-- Local CSS -->
+  <link rel="stylesheet" href="styles.css">
+  <link id="mode" rel="stylesheet" href="crt.css">
+
+</head>
+<body>
+
+  <svg style="position:fixed;width:0;height:0;z-index:-1" aria-hidden="true">
+    <filter id="fisheye">
+      <feTurbulence type="fractalNoise" baseFrequency="0.015" numOctaves="1" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="30" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <filter id="fisheye2">
+      <feTurbulence type="fractalNoise" baseFrequency="0.015" numOctaves="1" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="25" xChannelSelector="G" yChannelSelector="B"/>
+    </filter>
+  </svg>
+
+  <div id="header">
+
+
+  <div class="grid-2">
+    <div class="grid-2 def-div">
+      <span id="definition" class="defintion"></span>
+      <nav class="mobile-menu">Menu</nav>
+    </div>
+  </div>
+
+  <div class="grid-2">
+    <div class="grid-4">
+      <ul class="nav">
+       <li><a id="link-about" href="about.html">About</a></li>
+       <li><a id="" href="mailto:namyan@namyan.org">Email Us</a></li>
+        <!-- <li><a id="link-projects" href="projects.html">Projects</a></li> -->
+      </ul>
+    </div>
+    <div class="grid-4">
+      <ul class="nav">
+               <li><a id="link-support" href="store.html">Store</a></li>
+                <li><a id="" href="https://instagram.com/namyan.co" target="_blank">InstaGram</a> / 
+            <a href="https://twitter.com/namyan" target="_blank">Twitter</a>
+        <!-- <li><a id="link-support" href="store.html">Store</a></li> -->
+      </ul>
+    </div>
+    <div class="grid-4">
+      <ul class="nav">
+        <li><a id="link-newsletter" href="newsletter.html" target="_blank">Namyan Newsletter</a></li>
+        <li><a id="link-projects" href="projects.html">Projects</a></li>
+        </li>
+      </ul>
+    </div>
+    <div class="grid-4">
+      <div class="nav logo">
+        <a href="index.html"><img src="bhorse-bones.png"></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="mobile-menu-content">
+  <h2><a id="link-participate" href="participate.html">Participate</a></h2>
+  <h2><a id="link-projects" href="projects.html">Projects</a></h2>
+  <h2><a id="link-about" href="about.html">About</a></h2>
+  <h2><a id="link-store" href="store.html">Store</a></h2>
+  <h2><a id="link-support" href="donate.html">Support Us</a></h2>
+  <h2><a id="link-newsletter" href="newsletter.html" target="_blank">Namyan Newsletter</a></h2>
+  <h2><a id="" href="mailto:namyan@gmail.com">Email</a></h2>
+  <h2><a id="" href="https://instagram.com/namyan.co" target="_blank">InstaGram</a></h2>
+  <h2><a href="https://twitter.com/namyan" target="_blank">Twitter</a></h2>
+</div>
+
+  
+
+
+
+  <div id="footer">
+    <div class="mode"><button id="mode-toggle"></button></div>
+    <div class="wobble"><button id="wobble-toggle">Wooble off</button></div>
+  </div>
+
+
+  <div class="website-grid grid-hide">
+    <div class="grid-inner">
+      <section>
+        <div class="grid-2">
+          <!-- <div class="chars chars1"></div> -->
+          <p class="large">NA</p>
+        </div>
+        <div class="grid-2">
+          <!-- <div class="chars chars1"></div> -->
+          <p class="large">M</p>
+        </div>
+        <div class="grid-2">
+          <!-- <div class="chars chars3"></div> -->
+          <p class="large">Y</p>
+        </div>
+        <div class="grid-2">
+          <!-- <div class="chars chars4"></div> -->
+          <p class="large">AN</p>
+        </div>
+      </section>
+    </div>
+  </div>
+  <div class="crt-overlay crt-overlay-fullsize"></div>
+  <div id="shell" class="shell shell-fullsize projects-list sfpc">
+
+  <!-- Loader block here -->
+  <div class="loader-content">
+    <canvas id="pose-loader" width="400" height="400">
+      
+    </canvas>
+  </div>
+
+      <!-- <h4 class="breadcrumb  hide-content"><a href="store.html">store</a></h4> -->
+
+     <div class="intro crt home-intro shell-content hide-content " style="margin-bottom:5px">
+
+        <!-- <div class="break"></div> -->
+        <p tabindex="0" class="large" style="font-size:calc(36px + 2vw) !important ; font-family: 'Geneva 9', sans-serif !important;">
+          <span id="session-name"><a href="index.html">NAMYAN</a></span>
+    <span class="tm-mark">  <span style="font-family: var(--alpha-title-font); color:var(--alpha-link); font-size:0.65em"> ™ </span> </span> 
+
+    <h1 class="breadcrumb hide-content"><a href="store.html">The Bunker Tee</a></h1>
+        </p>
+
+          
+
+          <!-- <div class="grid-2 market-details class-details"> -->
+            <!-- <h4 class="noline">
+              Published on 
+            </h4>
+
+            <div class="break-noline-small"></div> -->
+
+
+            <!-- </div> -->
+              <div class="grid-2"></div>
+            </section>
+
+                <div class="grid-container product-images" id="participate-archive">
+
+                  <main class="grid-item main">
+                    <main class="grid-item main">
+                      <div class="carousel-items items carousel-content participate-content">
+                        <div id="carousel-images" class="class-images after-launch">
+
+                          <figure class="item participate-img"><img src="download (3).jfif">
+                          </figure>
+                          <figure class="item participate-img"><img src="cat.jpg">
+                          </figure>
+                          <!-- <figure class="item participate-img"><img src="https://prod-files-secure.s3.us-west-2.amazonaws.com/77ca4b85-795f-47db-acdd-f2a889574f86/32b1b66f-c629-49a1-8fa4-aa4db30f47ae/3E8E4574-5F44-49F9-A7C2-BA4CC1A4501B.jpg?X-Amz-Algorithm&#x3D;AWS4-HMAC-SHA256&amp;X-Amz-Content-Sha256&#x3D;UNSIGNED-PAYLOAD&amp;X-Amz-Credential&#x3D;ASIAZI2LB4662ZXHNKIM%2F20251122%2Fus-west-2%2Fs3%2Faws4_request&amp;X-Amz-Date&#x3D;20251122T090546Z&amp;X-Amz-Expires&#x3D;3600&amp;X-Amz-Security-Token&#x3D;IQoJb3JpZ2luX2VjEFgaCXVzLXdlc3QtMiJIMEYCIQDvbO%2Bvq7M3Sr5rnbE2l29ahzfRhYEFMpTiQRLMefi7XAIhAPkNshIWVE30KySSzugMSbY6tnWfO77%2B0hBmJvwEEw%2BzKv8DCCEQABoMNjM3NDIzMTgzODA1IgwXijXQJSOfIuhr9EYq3ANpwtPMbNQHB8Kl%2FX5f6IhfiKspd%2BMRqG91t2Mqcm4Sq6bYp%2FK7gpVOTJvtne12ihG4N6ZDlBKWo8ySCVXOz%2FXY2JvqhbeoNC%2FsWsmoTagoLuKFGNeeWR1G6OZI22XwEvBOUMENK1h7lruySSzXqFi3h1bZwU05Wd8M0PcufwnDcwdRmPuIWwMWqCM3RdC68EHvl7%2FL%2BWSFgSQSMhLqgfZ8fZnfcfWn4Ls0BXpvVAF1OdoieaCx%2FAgd8%2FkkmhcNQebv4oar6nnLxz8oKq6MygevJhqemVIp6zut9ReFhKeEaR5xeNhg%2FvK%2BKf5grbPkaVaxYnkBGaVjpf5CvEvWllZVO2YM2LXxjWNV13TiGkPYOkQ2KshhA2kwosIl%2FT%2B73ALru1XNpCnT0H%2BC2nuT2uvSbzexQiviAkUWp%2B%2BDNSjiKRk2D6QUmbHJjgrYwp4BmyJQq7H8PBY3OWx08sMuQhoKD%2BuSDiufTZURWuOU%2BiukZgSsIcBwkdU15FTBtxL0vboym0ZMgx7kQk9WrVOakox7RAIEU5GU28xpEZ%2Btn4%2FC5v1WJIVOoe3XhP9drfg4Bw3mYzOIXqWR4ky6zFRs6Zm34kZJIFfUlLZFoeFdpco8OESt4trMdxCAgNlJyzCF34XJBjqkAZv4AfHOf%2BLme8f1hZsmsIG57vuzC1OJUWGs%2FDe27N0f7j0Dt1pg0R7tjysOmhVaWTuRO8mbLjjRgJwLfnWvWRrJwgg0J%2FKkw46F4RA%2F%2BJfXmZmGKXXJ3hEJeBICu15GYfjjhy1%2B0oplJZjrLzYFtZgl%2B%2B3g%2BODm7qg%2FJroC6XAlxk6K1ZqHd37oAittW1WjN%2B%2FI%2B2f9uuMSQiMsfQh0GQDFp6iR&amp;X-Amz-Signature&#x3D;c379ac47bcbe12e2477757691d381e850b73a6f0b9fc963e16e18e6b35446d36&amp;X-Amz-SignedHeaders&#x3D;host&amp;x-amz-checksum-mode&#x3D;ENABLED&amp;x-id&#x3D;GetObject">
+                          </figure>
+                          <figure class="item participate-img"><img src="https://prod-files-secure.s3.us-west-2.amazonaws.com/77ca4b85-795f-47db-acdd-f2a889574f86/ac66dfc3-d92e-42ca-8f8b-27c79407e74c/Screen_Shot_2022-04-03_at_9.53.32_AM.jpg?X-Amz-Algorithm&#x3D;AWS4-HMAC-SHA256&amp;X-Amz-Content-Sha256&#x3D;UNSIGNED-PAYLOAD&amp;X-Amz-Credential&#x3D;ASIAZI2LB4662ZXHNKIM%2F20251122%2Fus-west-2%2Fs3%2Faws4_request&amp;X-Amz-Date&#x3D;20251122T090546Z&amp;X-Amz-Expires&#x3D;3600&amp;X-Amz-Security-Token&#x3D;IQoJb3JpZ2luX2VjEFgaCXVzLXdlc3QtMiJIMEYCIQDvbO%2Bvq7M3Sr5rnbE2l29ahzfRhYEFMpTiQRLMefi7XAIhAPkNshIWVE30KySSzugMSbY6tnWfO77%2B0hBmJvwEEw%2BzKv8DCCEQABoMNjM3NDIzMTgzODA1IgwXijXQJSOfIuhr9EYq3ANpwtPMbNQHB8Kl%2FX5f6IhfiKspd%2BMRqG91t2Mqcm4Sq6bYp%2FK7gpVOTJvtne12ihG4N6ZDlBKWo8ySCVXOz%2FXY2JvqhbeoNC%2FsWsmoTagoLuKFGNeeWR1G6OZI22XwEvBOUMENK1h7lruySSzXqFi3h1bZwU05Wd8M0PcufwnDcwdRmPuIWwMWqCM3RdC68EHvl7%2FL%2BWSFgSQSMhLqgfZ8fZnfcfWn4Ls0BXpvVAF1OdoieaCx%2FAgd8%2FkkmhcNQebv4oar6nnLxz8oKq6MygevJhqemVIp6zut9ReFhKeEaR5xeNhg%2FvK%2BKf5grbPkaVaxYnkBGaVjpf5CvEvWllZVO2YM2LXxjWNV13TiGkPYOkQ2KshhA2kwosIl%2FT%2B73ALru1XNpCnT0H%2BC2nuT2uvSbzexQiviAkUWp%2B%2BDNSjiKRk2D6QUmbHJjgrYwp4BmyJQq7H8PBY3OWx08sMuQhoKD%2BuSDiufTZURWuOU%2BiukZgSsIcBwkdU15FTBtxL0vboym0ZMgx7kQk9WrVOakox7RAIEU5GU28xpEZ%2Btn4%2FC5v1WJIVOoe3XhP9drfg4Bw3mYzOIXqWR4ky6zFRs6Zm34kZJIFfUlLZFoeFdpco8OESt4trMdxCAgNlJyzCF34XJBjqkAZv4AfHOf%2BLme8f1hZsmsIG57vuzC1OJUWGs%2FDe27N0f7j0Dt1pg0R7tjysOmhVaWTuRO8mbLjjRgJwLfnWvWRrJwgg0J%2FKkw46F4RA%2F%2BJfXmZmGKXXJ3hEJeBICu15GYfjjhy1%2B0oplJZjrLzYFtZgl%2B%2B3g%2BODm7qg%2FJroC6XAlxk6K1ZqHd37oAittW1WjN%2B%2FI%2B2f9uuMSQiMsfQh0GQDFp6iR&amp;X-Amz-Signature&#x3D;079a2656fb13b415fc2385caef8390aff8bf9bdbcf258645ce735535946421e0&amp;X-Amz-SignedHeaders&#x3D;host&amp;x-amz-checksum-mode&#x3D;ENABLED&amp;x-id&#x3D;GetObject">
+                          </figure>
+                          <figure class="item participate-img"><img src="https://prod-files-secure.s3.us-west-2.amazonaws.com/77ca4b85-795f-47db-acdd-f2a889574f86/c199bb59-88a9-41d4-bef4-cdcca19af422/prj_5L8vCOrnVjttEfGrqNqgtc-interior-print-ready_%281%29.jpg?X-Amz-Algorithm&#x3D;AWS4-HMAC-SHA256&amp;X-Amz-Content-Sha256&#x3D;UNSIGNED-PAYLOAD&amp;X-Amz-Credential&#x3D;ASIAZI2LB4662ZXHNKIM%2F20251122%2Fus-west-2%2Fs3%2Faws4_request&amp;X-Amz-Date&#x3D;20251122T090546Z&amp;X-Amz-Expires&#x3D;3600&amp;X-Amz-Security-Token&#x3D;IQoJb3JpZ2luX2VjEFgaCXVzLXdlc3QtMiJIMEYCIQDvbO%2Bvq7M3Sr5rnbE2l29ahzfRhYEFMpTiQRLMefi7XAIhAPkNshIWVE30KySSzugMSbY6tnWfO77%2B0hBmJvwEEw%2BzKv8DCCEQABoMNjM3NDIzMTgzODA1IgwXijXQJSOfIuhr9EYq3ANpwtPMbNQHB8Kl%2FX5f6IhfiKspd%2BMRqG91t2Mqcm4Sq6bYp%2FK7gpVOTJvtne12ihG4N6ZDlBKWo8ySCVXOz%2FXY2JvqhbeoNC%2FsWsmoTagoLuKFGNeeWR1G6OZI22XwEvBOUMENK1h7lruySSzXqFi3h1bZwU05Wd8M0PcufwnDcwdRmPuIWwMWqCM3RdC68EHvl7%2FL%2BWSFgSQSMhLqgfZ8fZnfcfWn4Ls0BXpvVAF1OdoieaCx%2FAgd8%2FkkmhcNQebv4oar6nnLxz8oKq6MygevJhqemVIp6zut9ReFhKeEaR5xeNhg%2FvK%2BKf5grbPkaVaxYnkBGaVjpf5CvEvWllZVO2YM2LXxjWNV13TiGkPYOkQ2KshhA2kwosIl%2FT%2B73ALru1XNpCnT0H%2BC2nuT2uvSbzexQiviAkUWp%2B%2BDNSjiKRk2D6QUmbHJjgrYwp4BmyJQq7H8PBY3OWx08sMuQhoKD%2BuSDiufTZURWuOU%2BiukZgSsIcBwkdU15FTBtxL0vboym0ZMgx7kQk9WrVOakox7RAIEU5GU28xpEZ%2Btn4%2FC5v1WJIVOoe3XhP9drfg4Bw3mYzOIXqWR4ky6zFRs6Zm34kZJIFfUlLZFoeFdpco8OESt4trMdxCAgNlJyzCF34XJBjqkAZv4AfHOf%2BLme8f1hZsmsIG57vuzC1OJUWGs%2FDe27N0f7j0Dt1pg0R7tjysOmhVaWTuRO8mbLjjRgJwLfnWvWRrJwgg0J%2FKkw46F4RA%2F%2BJfXmZmGKXXJ3hEJeBICu15GYfjjhy1%2B0oplJZjrLzYFtZgl%2B%2B3g%2BODm7qg%2FJroC6XAlxk6K1ZqHd37oAittW1WjN%2B%2FI%2B2f9uuMSQiMsfQh0GQDFp6iR&amp;X-Amz-Signature&#x3D;dfd3f243f2f1c0e16fce638bb7ea13aa94e038ad27c462e074b5818bb543c69e&amp;X-Amz-SignedHeaders&#x3D;host&amp;x-amz-checksum-mode&#x3D;ENABLED&amp;x-id&#x3D;GetObject">
+                          </figure> -->
+
+                        </div>
+
+
+                      </div>
+
+
+                    </main>
+                  </main>
+
+                </div>
+              <section>
+
+                <div class="grid-2"></div>
+                <div class="grid-2 market-details class-details">
+
+            <div class="featured-text"> <h3 style="white-space:pre-line">
+                  <h4> The idea was to make an article capable of withstanding rough conditions. Not only can it hold off against your century old washing machine but it's certainly well equipped to soldier through stress and blunt force hopefully caused during your expeditions wearing it.</h4>
+            </div>
+ <div class="break"></div>
+            <div class="details">
+              <div class="labels">Material</div>
+              <div class="labels-info " id="teachers-list">Cotton 100%
+                The blue kind
+              </div>
+            </div>
+
+
+              <div class="details">
+                <div class="labels">
+              Cost   
+                </div>
+                <div class="labels-info" id="">
+                  <h4>
+                    <span id="cost">$20</span> + shipping & tax
+                    <span class="small block">Please note: We can only ship within Pakistan.</span> 
+                    </h4>
+                    <span class="small block">(Or Congo, humour us.)</span> 
+                </div>
+              </div>
+
+
+
+              <p class="item" id="add-to-cart-button-wrapper"/>
+
+
+
+
+                <div class="break-noline"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <div class="break-noline"></div>
+
+
+
+
+
+
+
+          </div>
+        </section>
+
+      
+
+        <!-- <div class="break"></div> -->
+        <div class="break-noline"></div>
+        <div class="break-endpage"></div>
+      </div>
+    </div>
+</div>
+    <script src="carousel.js"></script>
+    <script src="outside.js"></script>
+  </body>
+</html>

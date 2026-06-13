@@ -1,0 +1,172 @@
+:root {
+    --background: #e3cdd8;
+    --text-color: #4d222d;
+    --text-link: var(--winter-24-link);
+    --box-shadow: rgba(255, 0, 0, 0.3);
+
+    --alpha-background: #e5e3e4;
+    --alpha-text: #cc4a6a;
+    --alpha-text-on-bg: #d17d94;
+    --alpha-link: #bc0000;
+    --alpha-special-text: #9b06ff80;
+    --alpha-weekend-intensive: #390306;
+}
+
+.shell {
+  border-color: #fff !important;
+}
+
+/* sfpc (base) theme */
+.sfpc,
+.sfpc.featured.session,
+.shell .sfpc,
+.sfpc.featured {
+  background-color: var(--background) !important;
+  color: var(--text-color);
+  box-sizing: border-box;
+  border-color: var(--text-color);
+}
+
+.sfpc p,
+.sfpc p a,
+.sfpc a,
+.sfpc.featured h4,
+.sfpc h4 a,
+.sfpc .intro a,
+.sfpc p.large a,
+.sfpc p a:hover,
+.sfpc.session.featured,
+.sfpc.session.featured a {
+  color: var(--text-color);
+}
+
+.sfpc h4 a:hover,
+.sfpc .intro a,
+.sfpc p.large a:hover,
+.sfpc.featured:hover h6,
+.sfpc.featured:hover .title,
+.sfpc .details a:hover,
+.sfpc.featured .title:hover,
+.sfpc p a:hover,
+.sfpc h4 a:hover,
+.sfpc section .grid-2 ul li::before,
+.sfpc .chars,
+.sfpc p a:hover,
+.sfpc a:hover,
+.sfpc h4 a:hover,
+.sfpc .intro a:hover,
+.sfpc .details a:hover,
+.sfpc .entity:hover .accordion dt h3:after,
+.sfpc .accordion dt h3:after,
+.sfpc i.special,
+.sfpc .expanded {
+  color: var(--text-link) !important;
+}
+
+.sfpc .block-text {
+  background-color: var(--background);
+  color: var(--text-link);
+}
+
+.sfpc section ul,
+.sfpc .website-grid {
+  background-color: var(--background);
+  color: var(--text-color) !important;
+  border-radius: var(--border-rad);
+}
+
+.shell.sfpc {
+  background: var(--background);
+}
+
+.sfpc.test, .sfpc.block-text {
+  border-color: var(--text-color);
+}
+
+/* alpha theme */
+.alpha,
+.alpha.featured.session,
+.alpha.featured {
+  color: var(--alpha-text);
+  box-sizing: border-box;
+  border-color: var(--alpha-text);
+  background-color: var(--alpha-background);
+  background-position: center;
+  background-repeat: repeat;
+  background-size: cover;
+}
+
+.shell.alpha {
+  background-color: var(--alpha-background);
+}
+
+.alpha,
+.alpha.featured.session,
+.shell .alpha,
+.alpha.featured {
+  background-color: var(--alpha-background) !important;
+  color: var(--alpha-text);
+  box-sizing: border-box;
+  border-color: var(--alpha-text);
+  text-shadow: none !important;
+}
+
+.alpha p,
+.alpha p a,
+.alpha a,
+.alpha.featured h4,
+.alpha h4 a,
+.alpha .intro a,
+.alpha p.large a,
+.alpha p a:hover,
+.alpha.session.featured,
+.alpha.session.featured a,
+.alpha.featured h4.type a,
+.sfpc .alpha a {
+  color: var(--alpha-text);
+}
+
+.alpha h4 a:hover,
+.alpha .intro a,
+.alpha p.large a:hover,
+.alpha.featured:hover h6,
+.alpha.featured:hover .title,
+.alpha .details a:hover,
+.alpha.featured .title:hover,
+.alpha p a:hover,
+.alpha h4 a:hover,
+.alpha section .grid-2 ul li::before,
+.alpha .chars,
+.alpha p a:hover,
+.alpha a:hover,
+.alpha h4 a:hover,
+.alpha .intro a:hover,
+.alpha .details a:hover,
+.alpha .entity:hover .accordion dt h3:after,
+.alpha .accordion dt h3:after,
+.alpha .expanded {
+  color: var(--alpha-link) !important;
+}
+
+.alpha .special-button {
+  background-color: var(--alpha-link);
+  color: #fff !important;
+  border-radius: 1.5vw;
+  padding: calc(10px + 0.5vw);
+  text-decoration: none;
+}
+
+.alpha .special-button:hover {
+  background-color: #fffefb;
+}
+
+.alpha .block-text {
+  background-color: var(--alpha-background);
+  color: var(--alpha-link);
+}
+
+.alpha .break {
+  border-color: var(--alpha-text);
+}
+
+

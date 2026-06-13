@@ -1,0 +1,1 @@
+// NAMYAN open.js placeholder

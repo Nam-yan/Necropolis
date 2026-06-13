@@ -1,0 +1,1 @@
+// NAMYAN carousel placeholder

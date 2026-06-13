@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>NAMYAN</title>
+  <link rel="shortcut icon" type="image/png" href="mouse.png">
+  <link rel="icon" type="image/png" href="gmouse.png">
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <meta name="title" content="NAMYAN">
+  <meta name="description" content="NAMYAN">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://namyan.org/">
+  <meta property="og:title" content="NAMYAN">
+  <meta property="og:description" content="NAMYAN">
+  <meta property="og:image" content="meta.jpg">
+
+  <!-- Twitter Cards -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://namyan.org/">
+  <meta property="twitter:title" content="NAMYAN">
+  <meta property="twitter:description" content="NAMYAN">
+  <meta property="twitter:image" content="meta.jpg">
+
+  <!-- Local CSS -->
+  <link rel="stylesheet" href="styles.css">
+  <link id="mode" rel="stylesheet" href="crt.css">
+
+</head>
+<body>
+
+  <svg style="position:fixed;width:0;height:0;z-index:-1" aria-hidden="true">
+    <filter id="fisheye">
+      <feTurbulence type="fractalNoise" baseFrequency="0.015" numOctaves="1" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="30" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <filter id="fisheye2">
+      <feTurbulence type="fractalNoise" baseFrequency="0.015" numOctaves="1" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="25" xChannelSelector="G" yChannelSelector="B"/>
+    </filter>
+  </svg>
+
+  <div id="header">
+
+
+  <div class="grid-2">
+    <div class="grid-2 def-div">
+      <span id="definition" class="defintion"></span>
+      <nav class="mobile-menu">Menu</nav>
+    </div>
+  </div>
+
+  <div class="grid-2">
+    <div class="grid-4">
+      <ul class="nav">
+       <li><a id="link-about" href="about.html">About</a></li>
+       <li><a id="" href="mailto:namyan@namyan.org">Email Us</a></li>
+        <!-- <li><a id="link-projects" href="projects.html">Projects</a></li> -->
+      </ul>
+    </div>
+    <div class="grid-4">
+      <ul class="nav">
+               <li><a id="link-support" href="store.html">Store</a></li>
+                <li><a id="" href="https://instagram.com/namyan.co" target="_blank">InstaGram</a> / 
+            <a href="https://twitter.com/namyan" target="_blank">Twitter</a>
+        <!-- <li><a id="link-support" href="store.html">Store</a></li> -->
+      </ul>
+    </div>
+    <div class="grid-4">
+      <ul class="nav">
+        <li><a id="link-newsletter" href="newsletter.html" target="_blank">Namyan Newsletter</a></li>
+        <li><a id="link-projects" href="projects.html">Projects</a></li>
+        </li>
+      </ul>
+    </div>
+    <div class="grid-4">
+      <div class="nav logo">
+        <a href="index.html"><img src="bhorse-bones.png"></a>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Fix this -->
+<div class="mobile-menu-content">
+  <h2><a id="link-participate" href="participate.html">Participate</a></h2>
+  <h2><a id="link-projects" href="projects.html">Projects</a></h2>
+  <h2><a id="link-about" href="about.html">About</a></h2>
+  <h2><a id="link-store" href="store.html">Store</a></h2>
+  <h2><a id="link-support" href="donate.html">Support Us</a></h2>
+  <h2><a id="link-newsletter" href="newsletter.html" target="_blank">Namyan Newsletter</a></h2>
+  <h2><a id="" href="mailto:namyan@gmail.com">Email</a></h2>
+  <h2><a id="" href="https://instagram.com/namyan.co" target="_blank">InstaGram</a></h2>
+  <h2><a href="https://twitter.com/namyan" target="_blank">Twitter</a></h2>
+</div>
+
+  
+
+
+
+  <div id="footer">
+    <div class="mode"><button id="mode-toggle"></button></div>
+    <div class="wobble"><button id="wobble-toggle">Wooble off</button></div>
+  </div>
+
+
+  <div class="website-grid grid-hide">
+    <div class="grid-inner">
+      <section>
+        <div class="grid-2">
+          <!-- <div class="chars chars1"></div> -->
+          <p class="large">NA</p>
+        </div>
+        <div class="grid-2">
+          <!-- <div class="chars chars1"></div> -->
+          <p class="large">M</p>
+        </div>
+        <div class="grid-2">
+          <!-- <div class="chars chars3"></div> -->
+          <p class="large">Y</p>
+        </div>
+        <div class="grid-2">
+          <!-- <div class="chars chars4"></div> -->
+          <p class="large">AN</p>
+        </div>
+      </section>
+    </div>
+  </div>
+
+
+  <div class="crt-overlay crt-overlay-fullsize"></div>
+
+  <div id="shell" class="shell shell-fullsize home animation alpha" style="min-height: 50vh; display: flex; flex-direction: column;">
+  <!-- Loader block here -->
+  <div class="loader-content">
+    <canvas id="pose-loader" width="400" height="400">
+    </canvas>
+  </div>
+
+  
+ 
+    <div id="home" class="hide-content shell-content" style="flex: 1; display: flex; flex-direction: column;">
+
+
+
+
+      <div class="intro crt home-intro" style="margin-bottom:80px">
+
+        <!-- <div class="break"></div> -->
+        <p tabindex="0" class="large" style="font-size:calc(16px + 2vw) !important">
+          <span id="session-name"><a href="index.html">NAMYAN</a></span>
+    <span class="tm-mark">  <span style="font-family: var(--alpha-title-font); color:var(--alpha-link); font-size:0.65em"> ™ </span> </span> 
+        </p>
+      </div>
+      
+
+     <div class="intro-featured" style="margin-top:auto">
+        <div class="rows-2">
+
+          <div style="display:flex;gap:var(--body-margin);width:100%">
+
+            <div class="grid-2 featured alpha weekend-intensive" style="width:50%">
+              <div class="featured-text">
+                <div class="top">
+                  <h4 class="type "><a class="pill" href="projects.html">Projects</a></h4>
+            <h2 class="title class" style="overflow-wrap: break-word;">Ungodly Selections</h2>
+                  <h6 class="index-teachers">ACT-2</h6>
+                </div>
+                <div class="bottom">
+                  <br><h4 class="details">2024<span class="dot"> · </span>Gabagool <br>Ovah here</h4>
+                </div>
+              </div>
+            </div>
+
+            <div class="grid-2 featured alpha weekend-intensive" style="width:50%">
+              <div class="featured-text">
+                <div class="top">
+                  <h4 class="type "><a class="pill" href="store.html">Store</a></h4>
+            <h2 class="title class" style="overflow-wrap: break-word;">Bunker Tee</h2>
+                  <h6 class="index-teachers">ACT-2</h6>
+                </div>
+                <div class="bottom">
+                  <br><h4 class="details">2025<span class="dot"> · </span>Out now ....<br>Buy NOW</h4>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div style="display:flex;gap:var(--body-margin);width:100%">
+            <div class="grid-2 featured alpha weekend-intensive" style="width:100%">
+              <div class="featured-text">
+                <div class="top">
+                  <h4 class="type "><a class="pill" href="newsletter.html">Newsletter</a></h4>
+            <h2 class="title class" style="overflow-wrap: break-word;">Blow up a house</h2>
+                  <h6 class="index-teachers">With Me</h6>
+                </div>
+                <div class="bottom">
+                  <br><h4 class="details">Sat-Sun July 26-27<span class="dot"> · </span>In-Person <br>Sign-ups open (no application necessary)</h4>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+
+
+
+    </div>
+
+
+
+
+
+  <script src="open.js"></script>
+  <script src="outside.js"></script>
+
+</body>
+</html>
