@@ -763,6 +763,12 @@ section.closed {
   flex: 1 1 calc(25% - var(--body-margin));
 }
 
+#section-projects .grid-1 .grid-4 {
+  width: calc(33.33% - var(--body-margin));
+  flex: 1 1 calc(33.33% - var(--body-margin));
+  min-width: 300px;
+}
+
 .grid-1-img img {
   box-sizing: border-box;
   border-radius: var(--border-rad);
