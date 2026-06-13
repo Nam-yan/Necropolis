@@ -769,6 +769,12 @@ section.closed {
   min-width: 300px;
 }
 
+#section-projects .grid-4.featured img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
 .grid-1-img img {
   box-sizing: border-box;
   border-radius: var(--border-rad);
