@@ -132,13 +132,31 @@ function init() {
   // Hide content initially
   document.querySelectorAll(".hide-content").forEach(el => el.style.display = "none");
 
+  const MAX_VIDEO_WAIT = 6000;
+
+  // Video ready promise — resolves when video can play, or after 6s
+  var videoReady = new Promise(function(resolve) {
+    var vid = document.getElementById("hero-vid");
+    if (!vid) return resolve();
+    var timeout = setTimeout(resolve, MAX_VIDEO_WAIT);
+    vid.addEventListener("canplay", function() {
+      clearTimeout(timeout);
+      resolve();
+    });
+    vid.addEventListener("error", function() {
+      clearTimeout(timeout);
+      resolve();
+    });
+    vid.load();
+  });
+
   // List of JSON pose files
   const jsonFiles = ["swingaling.json", "cactus.json", "guy.json", "carlton.json"];
 
   // Pick one randomly
   const chosenFile = jsonFiles[Math.floor(Math.random() * jsonFiles.length)];
 
-  fetch(chosenFile)
+  var poseLoaded = fetch(chosenFile)
     .then(res => res.json())
     .then(data => {
       poseData = data;
@@ -146,29 +164,33 @@ function init() {
     })
     .catch(err => {
       console.error("Pose data failed to load:", err);
-    })
-    .finally(function() {
-      const elapsed = performance.now() - startTime;
-      const remaining = MIN_LOADER_TIME - elapsed;
-
-      setTimeout(function() {
-        var loader = document.querySelector(".loader-content");
-        if (loader) {
-          loader.style.transition = "opacity 0.4s";
-          loader.style.opacity = "0";
-          setTimeout(function() { loader.remove(); }, 400);
-        }
-        document.querySelectorAll(".hide-content").forEach(function(el) {
-          el.style.transition = "opacity 0.7s";
-          el.style.opacity = "1";
-          el.style.display = "block";
-        });
-        // Trigger video autoplay after content is revealed
-        document.querySelectorAll("video[autoplay]").forEach(function(v) {
-          v.play().catch(function(e) {});
-        });
-      }, Math.max(0, remaining));
     });
+
+  Promise.all([poseLoaded, videoReady]).then(function() {
+    const elapsed = performance.now() - startTime;
+    const remaining = MIN_LOADER_TIME - elapsed;
+
+    setTimeout(function() {
+      var loader = document.querySelector(".loader-content");
+      if (loader) {
+        loader.style.transition = "opacity 0.4s";
+        loader.style.opacity = "0";
+        setTimeout(function() { loader.remove(); }, 400);
+      }
+      document.querySelectorAll(".hide-content").forEach(function(el) {
+        el.style.transition = "opacity 0.7s";
+        el.style.opacity = "1";
+        el.style.display = "block";
+      });
+      // Fade in the hero video and play it
+      var heroBox = document.getElementById("hero-video");
+      var heroVid = document.getElementById("hero-vid");
+      if (heroBox) heroBox.style.opacity = "1";
+      if (heroVid) {
+        heroVid.play().catch(function(e) {});
+      }
+    }, Math.max(0, remaining));
+  });
 }
 
 init();
