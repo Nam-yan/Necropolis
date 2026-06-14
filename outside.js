@@ -163,6 +163,10 @@ function init() {
           el.style.opacity = "1";
           el.style.display = "block";
         });
+        // Trigger video autoplay after content is revealed
+        document.querySelectorAll("video[autoplay]").forEach(function(v) {
+          v.play().catch(function(e) {});
+        });
       }, Math.max(0, remaining));
     });
 }
