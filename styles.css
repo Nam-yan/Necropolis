@@ -535,9 +535,7 @@ img {
 }
 
 .hide-content {
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
+  display: none;
 }
 
 .show {

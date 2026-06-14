@@ -130,16 +130,13 @@ function startPoseAnimation() {
 
 function init() {
   // Hide content initially
-  document.querySelectorAll(".hide-content").forEach(el => {
-    el.style.opacity = "0";
-    el.style.visibility = "hidden";
-    el.style.pointerEvents = "none";
-  });
+  document.querySelectorAll(".hide-content").forEach(el => el.style.display = "none");
 
   const MAX_VIDEO_WAIT = 6000;
 
   // Video ready promise — resolves when video can play, or after 6s
   var videoReady = new Promise(function(resolve) {
+    var videoReady = new Promise(function(resolve) {
     var vid = document.getElementById("hero-vid");
     if (!vid) return resolve();
     var timeout = setTimeout(resolve, MAX_VIDEO_WAIT);
@@ -151,7 +148,13 @@ function init() {
       clearTimeout(timeout);
       resolve();
     });
-    vid.load();
+    var src = vid.querySelector('source').src;
+    fetch(src).then(function(r) { return r.blob(); }).then(function(blob) {
+      vid.src = URL.createObjectURL(blob);
+      vid.load();
+    }).catch(function() {
+      vid.load();
+    });
   });
 
   // List of JSON pose files
@@ -182,10 +185,7 @@ function init() {
         setTimeout(function() { loader.remove(); }, 400);
       }
       document.querySelectorAll(".hide-content").forEach(function(el) {
-        el.style.transition = "opacity 0.7s";
-        el.style.opacity = "1";
-        el.style.visibility = "visible";
-        el.style.pointerEvents = "auto";
+        el.style.display = "block";
       });
       // Fade in the hero video and play it
       var heroBox = document.getElementById("hero-video");
