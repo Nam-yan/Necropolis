@@ -223,11 +223,16 @@ init();
 
           randDef = poeticcomputation[Math.floor( Math.random() * poeticcomputation.length )];
           document.getElementById('definition').textContent = randDef;
+          var menuPoetry = document.querySelector('.menu-poetry');
+          if (menuPoetry) menuPoetry.textContent = randDef;
           var marqueeDef = document.getElementById('marquee-definition');
           if (marqueeDef) marqueeDef.textContent = randDef;
 
           document.querySelector(".def-div").addEventListener("click", function() {
-            document.getElementById('definition').textContent = poeticcomputation[Math.floor( Math.random() * poeticcomputation.length )];
+            var text = poeticcomputation[Math.floor( Math.random() * poeticcomputation.length )];
+            document.getElementById('definition').textContent = text;
+            var mp = document.querySelector('.menu-poetry');
+            if (mp) mp.textContent = text;
           });
 
           var expandIntro = document.querySelector(".expand-intro");
@@ -295,22 +300,20 @@ init();
         // MOBILE MENU
 
           document.querySelector(".mobile-menu").addEventListener("click", function() {
-              document.querySelectorAll(".shell").forEach(function(s) {
-                s.classList.toggle('shell-halfsize');
-                s.classList.toggle('shell-fullsize');
-              });
-              document.querySelectorAll(".crt-overlay").forEach(function(o) {
-                o.classList.toggle('crt-overlay-halfsize');
-                o.classList.toggle('crt-overlay-fullsize');
-              });
               var mmc = document.querySelector(".mobile-menu-content");
               if (mmc) mmc.classList.toggle('mobile-menu-content-show');
-
-              if (this.textContent == "Menu") {
-                this.textContent = "Close";
+              if (this.textContent == "☰") {
+                this.textContent = "✕";
               } else {
-                this.textContent = "Menu";
+                this.textContent = "☰";
               }
+          });
+
+          document.querySelector(".menu-close").addEventListener("click", function() {
+              var mmc = document.querySelector(".mobile-menu-content");
+              if (mmc) mmc.classList.remove('mobile-menu-content-show');
+              var hamburger = document.querySelector(".mobile-menu");
+              if (hamburger) hamburger.textContent = "☰";
           });
 
         // ADD UNDERLINE TO MENU BASED ON LINK
