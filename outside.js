@@ -146,26 +146,25 @@ function init() {
     })
     .catch(err => {
       console.error("Pose data failed to load:", err);
+    })
+    .finally(function() {
+      const elapsed = performance.now() - startTime;
+      const remaining = MIN_LOADER_TIME - elapsed;
+
+      setTimeout(function() {
+        var loader = document.querySelector(".loader-content");
+        if (loader) {
+          loader.style.transition = "opacity 0.4s";
+          loader.style.opacity = "0";
+          setTimeout(function() { loader.remove(); }, 400);
+        }
+        document.querySelectorAll(".hide-content").forEach(function(el) {
+          el.style.transition = "opacity 0.7s";
+          el.style.opacity = "1";
+          el.style.display = "block";
+        });
+      }, Math.max(0, remaining));
     });
-
-  window.addEventListener("load", function() {
-    const elapsed = performance.now() - startTime;
-    const remaining = MIN_LOADER_TIME - elapsed;
-
-    setTimeout(function() {
-      var loader = document.querySelector(".loader-content");
-      if (loader) {
-        loader.style.transition = "opacity 0.4s";
-        loader.style.opacity = "0";
-        setTimeout(function() { loader.remove(); }, 400);
-      }
-      document.querySelectorAll(".hide-content").forEach(function(el) {
-        el.style.transition = "opacity 0.7s";
-        el.style.opacity = "1";
-        el.style.display = "block";
-      });
-    }, Math.max(0, remaining));
-  });
 }
 
 init();
