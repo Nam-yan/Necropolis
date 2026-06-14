@@ -136,7 +136,6 @@ function init() {
 
   // Video ready promise — resolves when video can play, or after 6s
   var videoReady = new Promise(function(resolve) {
-    var videoReady = new Promise(function(resolve) {
     var vid = document.getElementById("hero-vid");
     if (!vid) return resolve();
     var timeout = setTimeout(resolve, MAX_VIDEO_WAIT);
@@ -148,13 +147,17 @@ function init() {
       clearTimeout(timeout);
       resolve();
     });
-    var src = vid.querySelector('source').src;
-    fetch(src).then(function(r) { return r.blob(); }).then(function(blob) {
-      vid.src = URL.createObjectURL(blob);
+    var src = vid.querySelector('source') && vid.querySelector('source').src;
+    if (src) {
+      fetch(src).then(function(r) { return r.blob(); }).then(function(blob) {
+        vid.src = URL.createObjectURL(blob);
+        vid.load();
+      }).catch(function() {
+        vid.load();
+      });
+    } else {
       vid.load();
-    }).catch(function() {
-      vid.load();
-    });
+    }
   });
 
   // List of JSON pose files
