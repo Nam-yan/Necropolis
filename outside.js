@@ -130,7 +130,11 @@ function startPoseAnimation() {
 
 function init() {
   // Hide content initially
-  document.querySelectorAll(".hide-content").forEach(el => el.style.display = "none");
+  document.querySelectorAll(".hide-content").forEach(el => {
+    el.style.opacity = "0";
+    el.style.visibility = "hidden";
+    el.style.pointerEvents = "none";
+  });
 
   const MAX_VIDEO_WAIT = 6000;
 
@@ -180,7 +184,8 @@ function init() {
       document.querySelectorAll(".hide-content").forEach(function(el) {
         el.style.transition = "opacity 0.7s";
         el.style.opacity = "1";
-        el.style.display = "block";
+        el.style.visibility = "visible";
+        el.style.pointerEvents = "auto";
       });
       // Fade in the hero video and play it
       var heroBox = document.getElementById("hero-video");
