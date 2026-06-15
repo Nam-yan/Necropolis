@@ -212,6 +212,7 @@ function init() {
           var ct = 0;
           var cs = "wander";
           var atkStart = 0;
+          var atkEnd = 0;
           var cmx = 0, cmy = 0;
           document.addEventListener("mousemove", function(e) {
             cmx = e.clientX; cmy = e.clientY;
@@ -219,7 +220,7 @@ function init() {
           (function raf(t) {
             var d = Math.hypot(cmx - cx, cmy - cy);
             if (cs === "wander") {
-              if (Math.random() < 0.003) {
+              if (t - atkEnd > 3000 && Math.random() < 0.0005) {
                 cs = "attack";
                 atkStart = t;
                 tx = cmx; ty = cmy;
@@ -231,7 +232,7 @@ function init() {
               cx += (tx - cx) * 0.005;
               cy += (ty - cy) * 0.005;
               if (Math.hypot(tx - cx, ty - cy) < 30) {
-                if (Math.random() < 0.1) {
+                if (t - atkEnd > 3000 && Math.random() < 0.1) {
                   cs = "attack";
                   atkStart = t;
                   tx = cmx; ty = cmy;
@@ -245,8 +246,9 @@ function init() {
                 }
               }
             } else {
-              if (d < 0.5 || (t - atkStart > 1500 && d > 300)) {
+              if (d < 0.1 || t - atkStart > 3000) {
                 cs = "wander";
+                atkEnd = t;
                 tx = Math.random() * (window.innerWidth - 60);
                 ty = Math.random() * (window.innerHeight - 60);
                 chaserFrames[0].style.display = "block";
@@ -255,8 +257,8 @@ function init() {
                 chaserFrames[3].style.display = "none";
               }
               tx = cmx; ty = cmy;
-              cx += (tx - cx) * 0.03;
-              cy += (ty - cy) * 0.03;
+              cx += (tx - cx) * 0.35;
+              cy += (ty - cy) * 0.35;
             }
             var fl = tx > cx ? "-1" : "1";
             chaserEl.style.transform = "translate(" + cx + "px, " + cy + "px) scaleX(" + fl + ")";
