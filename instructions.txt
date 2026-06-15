@@ -26,7 +26,7 @@ within a minute or two.
 === FILE STRUCTURE ===
 
 index.html       — Homepage (was front.html)
-projects.html    — Project listing (6 projects)
+projects.html    — Project listing (5 projects, descending by date)
 store.html       — Store page
 newfears.html    — Bunker Tee product page
 participate.html — Participate page
@@ -36,14 +36,14 @@ donate.html      — Support/Donate page
 pose.html        — Pose/loader page
 
 styles.css       — Main styles
-crt.css          — CRT overlay theme
-lcd.css          — LCD theme
+crt.css          — CRT overlay theme (dark, grayscale, scanlines)
+lcd.css          — LCD theme (light, pink glass sheen)
 carousel.js      — Carousel script
-outside.js       — External interactions script
+outside.js       — Theme toggle, loader, mobile menu, video preload
 open.js          — Open/click script
 
 fonts/           — Custom fonts (PixelOperator, Cthulhumbus)
-*.png / *.jpg    — Images
+images/          — Site images (incl. Chapel/reverb.mp4 hero video)
 *.json           — JSON data files
 
 === CUSTOM DOMAIN (if set up) ===
@@ -60,3 +60,12 @@ nam-yan.github.io.
 - nav logo links back to index.html
 - projects.html links to /projects/... and /sessions/...
   (these paths work if subpages exist at that path)
+
+=== RECENT WORK ===
+
+- Hero video: images/Chapel/reverb.mp4 (H.264, 720x1280 portrait, CRF 23, 24fps, no audio)
+  Loaded via fetch() blob to bypass display:none on mobile Safari
+  outside.js: await Promise.all([poseLoaded, videoReady]) with 6s timeout
+- LCD theme: light pink palette (#f3e4ec bg, #1a060e text, #c4004a links)
+  Glass sheen gradient on .shell, pink glow on hover, clean 1px borders
+- Mobile: full-screen overlay menu, poetry inside menu, no Support Us link

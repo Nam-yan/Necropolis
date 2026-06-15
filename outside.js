@@ -219,13 +219,21 @@ init();
     "They must have amnesia, they forgot that I'm him",
     "The last thing he ever saw was the price tag on them.",
     "Motherfucker looked like a Resident Evil 5 campaign extra after we was done with him.",
-    "My bitch look like David Hasselhoff",
+    "My plug look like David Hasselhoff",
     "The zaza got me speakin' Esperanto.",
     "Get the president on the phone now I fronted him a brick, I need my money.",
     "This Smith & Wesson got me movin' like an invasive species.",
     "My diamonds come from the most horrific situations possible.",
     "Smoking that good schooby-doo waa",
-    "I use the steroud."
+    "I use the steroud.",
+    "Wouldn't let no one catch that photo. That shits legacy ending.",
+    "Not my monkey, Not my circus, but I definitely know the clowns.",
+    "Who has AIDs I need someone bit.",
+    "If this website could speak, it would be saying slurs",
+    "I was hospitalised for approaching perfection. Thank you for your loss.",
+    "Level of poverty exceeding destitute. It's called prostitute or something.",
+    "We're standing on Monkey Business, One of us wrote Hamlet",
+    "We tend not to keep grudges or rivalries against certain authorities. We act on that before it formulates."
 
 ];
 
