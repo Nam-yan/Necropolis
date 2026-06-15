@@ -197,6 +197,80 @@ function init() {
       if (heroVid) {
         heroVid.play().catch(function(e) {});
       }
+      document.dispatchEvent(new Event('loaderComplete'));
+
+      var chaserEl = document.getElementById("chaser");
+      if (chaserEl) {
+        var chaserFrames = chaserEl.querySelectorAll(".chaser-frame");
+        if (chaserFrames.length >= 2) {
+          chaserEl.style.display = "block";
+          var cx = Math.random() * (window.innerWidth - 60);
+          var cy = Math.random() * (window.innerHeight - 60);
+          var tx = Math.random() * (window.innerWidth - 60);
+          var ty = Math.random() * (window.innerHeight - 60);
+          var cf = 0;
+          var ct = 0;
+          var cs = "wander";
+          var atkStart = 0;
+          var cmx = 0, cmy = 0;
+          document.addEventListener("mousemove", function(e) {
+            cmx = e.clientX; cmy = e.clientY;
+          });
+          (function raf(t) {
+            var d = Math.hypot(cmx - cx, cmy - cy);
+            if (cs === "wander") {
+              if (Math.random() < 0.003) {
+                cs = "attack";
+                atkStart = t;
+                tx = cmx; ty = cmy;
+                chaserFrames[0].style.display = "none";
+                chaserFrames[1].style.display = "none";
+                chaserFrames[2].style.display = "block";
+                chaserFrames[3].style.display = "block";
+              }
+              cx += (tx - cx) * 0.005;
+              cy += (ty - cy) * 0.005;
+              if (Math.hypot(tx - cx, ty - cy) < 30) {
+                if (Math.random() < 0.1) {
+                  cs = "attack";
+                  atkStart = t;
+                  tx = cmx; ty = cmy;
+                  chaserFrames[0].style.display = "none";
+                  chaserFrames[1].style.display = "none";
+                  chaserFrames[2].style.display = "block";
+                  chaserFrames[3].style.display = "block";
+                } else {
+                  tx = Math.random() * (window.innerWidth - 60);
+                  ty = Math.random() * (window.innerHeight - 60);
+                }
+              }
+            } else {
+              if (d < 0.5 || (t - atkStart > 1500 && d > 300)) {
+                cs = "wander";
+                tx = Math.random() * (window.innerWidth - 60);
+                ty = Math.random() * (window.innerHeight - 60);
+                chaserFrames[0].style.display = "block";
+                chaserFrames[1].style.display = "block";
+                chaserFrames[2].style.display = "none";
+                chaserFrames[3].style.display = "none";
+              }
+              tx = cmx; ty = cmy;
+              cx += (tx - cx) * 0.03;
+              cy += (ty - cy) * 0.03;
+            }
+            var fl = tx > cx ? "-1" : "1";
+            chaserEl.style.transform = "translate(" + cx + "px, " + cy + "px) scaleX(" + fl + ")";
+            if (t - ct > 200) {
+              cf = (cf + 1) % 2;
+              var off = cs === "attack" ? 2 : 0;
+              chaserFrames[off].style.opacity = cf ? "0" : "1";
+              chaserFrames[off + 1].style.opacity = cf ? "1" : "0";
+              ct = t;
+            }
+            requestAnimationFrame(raf);
+          })(0);
+        }
+      }
     }, Math.max(0, remaining));
   });
 }

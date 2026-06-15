@@ -3,29 +3,181 @@
 <head>
   <title>About - NAMYAN</title>
   <link rel="shortcut icon" type="image/png" href="mouse.png">
+  <link rel="icon" type="image/png" href="gmouse.png">
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <meta name="title" content="NAMYAN">
+  <meta name="description" content="NAMYAN">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://namyan.org/">
+  <meta property="og:title" content="NAMYAN">
+  <meta property="og:description" content="NAMYAN">
+  <meta property="og:image" content="meta.jpg">
+
+  <!-- Twitter Cards -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://namyan.org/">
+  <meta property="twitter:title" content="NAMYAN">
+  <meta property="twitter:description" content="NAMYAN">
+  <meta property="twitter:image" content="meta.jpg">
+
+  <!-- Local CSS -->
   <link rel="stylesheet" href="styles.css">
   <link id="mode" rel="stylesheet" href="crt.css">
-  <script src="outside.js"></script>
+
 </head>
 <body>
+
+  <svg style="position:fixed;width:0;height:0;z-index:-1" aria-hidden="true">
+    <filter id="fisheye">
+      <feTurbulence type="fractalNoise" baseFrequency="0.015" numOctaves="1" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="30" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <filter id="fisheye2">
+      <feTurbulence type="fractalNoise" baseFrequency="0.015" numOctaves="1" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="25" xChannelSelector="G" yChannelSelector="B"/>
+    </filter>
+  </svg>
+
   <div id="header">
-    <div class="grid-2">
-      <div class="grid-2 def-div">
-        <span id="definition" class="defintion"></span>
-        <nav class="mobile-menu">Menu</nav>
+
+
+  <div class="grid-2">
+    <div class="grid-2 def-div">
+      <span id="definition" class="defintion"></span>
+      <nav class="mobile-menu">Menu</nav>
+    </div>
+  </div>
+
+  <div class="grid-2">
+    <div class="grid-4">
+      <ul class="nav">
+       <li><a id="link-about" href="about.html">About</a></li>
+       <li><a id="" href="mailto:namyan@namyan.org">Email Us</a></li>
+        <!-- <li><a id="link-projects" href="projects.html">Projects</a></li> -->
+      </ul>
+    </div>
+    <div class="grid-4">
+      <ul class="nav">
+               <li><a id="link-support" href="store.html">Store</a></li>
+                <li><a id="" href="https://instagram.com/namyan.co" target="_blank">InstaGram</a> / 
+            <a href="https://twitter.com/namyan" target="_blank">Twitter</a>
+        <!-- <li><a id="link-support" href="store.html">Store</a></li> -->
+      </ul>
+    </div>
+    <div class="grid-4">
+      <ul class="nav">
+        <li><a id="link-newsletter" href="newsletter.html" target="_blank">Namyan Newsletter</a></li>
+        <li><a id="link-projects" href="projects.html">Projects</a></li>
+        </li>
+      </ul>
+    </div>
+    <div class="grid-4">
+      <div class="nav logo">
+        <a href="index.html"><img src="bhorse-bones.png"></a>
       </div>
     </div>
   </div>
-  <div id="shell" class="shell shell-fullsize">
-    <div class="loader-content"></div>
-    <div class="shell-content">
-      <h1>About NAMYAN</h1>
-    </div>
-  </div>
+</div>
+
+<div class="mobile-menu-content">
+  <h2><a id="link-participate" href="participate.html">Participate</a></h2>
+  <h2><a id="link-projects" href="projects.html">Projects</a></h2>
+  <h2><a id="link-about" href="about.html">About</a></h2>
+  <h2><a id="link-store" href="store.html">Store</a></h2>
+  <h2><a id="link-newsletter" href="newsletter.html" target="_blank">Namyan Newsletter</a></h2>
+  <h2><a id="" href="mailto:namyan@gmail.com">Email</a></h2>
+  <h2><a id="" href="https://instagram.com/namyan.co" target="_blank">InstaGram</a></h2>
+  <h2><a href="https://twitter.com/namyan" target="_blank">Twitter</a></h2>
+</div>
+
+  
+
   <div id="footer">
     <div class="mode"><button id="mode-toggle"></button></div>
+    <div class="wobble"><button id="wobble-toggle">Wooble off</button></div>
   </div>
+
+
+  <div class="website-grid grid-hide">
+    <div class="grid-inner">
+      <section>
+        <div class="grid-2">
+          <!-- <div class="chars chars1"></div> -->
+          <p class="large">NA</p>
+        </div>
+        <div class="grid-2">
+          <!-- <div class="chars chars1"></div> -->
+          <p class="large">M</p>
+        </div>
+        <div class="grid-2">
+          <!-- <div class="chars chars3"></div> -->
+          <p class="large">Y</p>
+        </div>
+        <div class="grid-2">
+          <!-- <div class="chars chars4"></div> -->
+          <p class="large">AN</p>
+        </div>
+      </section>
+    </div>
+  </div>
+  <div class="crt-overlay crt-overlay-fullsize"></div>
+  <div id="shell" class="shell shell-fullsize">
+
+  <!-- Loader block here -->
+  <div class="loader-content">
+    <canvas id="pose-loader" width="400" height="400">
+      
+    </canvas>
+  </div>
+
+    <div class="shell-content hide-content">
+
+    </div>
+
+    <div id="chaser">
+      <img src="images/svgs/demon1.svg" class="chaser-frame" data-frame="0" data-mode="wander">
+      <img src="images/svgs/demon2.svg" class="chaser-frame" data-frame="1" data-mode="wander">
+      <img src="images/svgs/chaser1.svg" class="chaser-frame" data-frame="0" data-mode="attack" style="display:none">
+      <img src="images/svgs/chaser2.svg" class="chaser-frame" data-frame="1" data-mode="attack" style="display:none">
+    </div>
+  </div>
+
+  <script src="outside.js"></script>
+
+<style>
+#chaser {
+  display: none;
+  position: fixed;
+  width: 80px;
+  height: 80px;
+  pointer-events: none;
+  z-index: 9999;
+  will-change: transform;
+}
+#chaser .chaser-frame {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  filter: none !important;
+  -webkit-filter: none !important;
+}
+#chaser .chaser-frame[data-frame="1"] {
+  opacity: 0;
+}
+#chaser .chaser-frame[data-mode="attack"] {
+  transform: scale(1.35);
+  transform-origin: center center;
+}
+</style>
+
+
+
 </body>
+
 </html>
