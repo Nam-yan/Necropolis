@@ -149,15 +149,9 @@ function init() {
     });
     var src = vid.querySelector('source') && vid.querySelector('source').src;
     if (src) {
-      fetch(src).then(function(r) { return r.blob(); }).then(function(blob) {
-        vid.src = URL.createObjectURL(blob);
-        vid.load();
-      }).catch(function() {
-        vid.load();
-      });
-    } else {
-      vid.load();
+      vid.src = src;
     }
+    vid.load();
   });
 
   // List of JSON pose files
