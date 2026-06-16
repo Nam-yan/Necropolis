@@ -135,13 +135,13 @@
     </canvas>
   </div>
 
-    <div class="shell-content hide-content" style="display:flex; align-items:center; justify-content:center; height:100%;">
-      <p style="text-align:center; font-family:var(--main-special-font); font-size:16px; margin:0;">for the love of the game</p>
+    <div class="shell-content hide-content" style="position:relative; height:100%;">
+      <p style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); text-align:center; font-family:var(--main-special-font); font-size:20px; margin:0; white-space:nowrap;">for the love of the game</p>
     </div>
 
   </div>
 
-    <div id="chaser" style="display:block; background:red; top:100px; left:100px;">
+    <div id="chaser">
       <img src="images/svgs/demon1.svg" class="chaser-frame" data-frame="0" data-mode="wander">
       <img src="images/svgs/demon2.svg" class="chaser-frame" data-frame="1" data-mode="wander">
       <img src="images/svgs/chaser1.svg" class="chaser-frame" data-frame="0" data-mode="attack" style="display:none">
@@ -180,13 +180,6 @@
   transform-origin: center center;
 }
 </style>
-
-<script>
-setTimeout(function() {
-  var c = document.getElementById("chaser");
-  if (c) c.style.display = "block";
-}, 4000);
-</script>
 
 </body>
 
