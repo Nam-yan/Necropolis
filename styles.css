@@ -62,6 +62,10 @@
   font-family: 'Screenfont';
   src: url('fonts/PixelOperatorMono-Bold.ttf') format('truetype');
 }
+@font-face {
+  font-family: 'Jenson';
+  src: url('fonts/1470Jenson.TTF') format('truetype');
+}
 
 .alpha.featured .title,
 .alpha #session-name, #tag.alpha {
@@ -1273,7 +1277,7 @@ video {
     text-align: center;
     opacity: 0.8;
     max-width: 80%;
-    font-family: var(--main-special-font);
+    font-family: 'Jenson', var(--main-special-font);
   }
 
   .mobile-menu-content h2 {
