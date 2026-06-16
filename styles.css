@@ -1222,15 +1222,21 @@ video {
   }
 
   .mobile-menu {
-    display: inline-block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     cursor: pointer;
     font-size: 11px;
     padding: 4px 10px;
     line-height: 1;
-    vertical-align: middle;
     letter-spacing: 1px;
     border: 1px solid var(--text-color);
     text-transform: lowercase;
+  }
+  .def-div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .mobile-menu-content-show {
@@ -1242,8 +1248,9 @@ video {
     z-index: 999999999999;
     background: var(--background);
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
+    padding-top: 15vh;
     overflow-y: auto;
   }
 
@@ -1262,10 +1269,11 @@ video {
   .menu-poetry {
     font-size: 18px;
     line-height: 1.6;
-    padding: 2vh 5vw 4vh;
+    padding: 0 5vw 2vh;
     text-align: center;
     opacity: 0.8;
     max-width: 80%;
+    font-family: var(--main-special-font);
   }
 
   .mobile-menu-content h2 {
