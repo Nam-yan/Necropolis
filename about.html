@@ -48,7 +48,7 @@
   <div class="grid-2">
     <div class="grid-2 def-div">
       <span id="definition" class="defintion"></span>
-      <nav class="mobile-menu">☰</nav>
+      <nav class="mobile-menu">Menu</nav>
     </div>
   </div>
 
@@ -84,8 +84,7 @@
 </div>
 
 <div class="mobile-menu-content">
-  <div class="menu-close">✕</div>
-  <div class="menu-poetry"></div>
+  <h2><a id="link-participate" href="participate.html">Participate</a></h2>
   <h2><a id="link-projects" href="projects.html">Projects</a></h2>
   <h2><a id="link-about" href="about.html">About</a></h2>
   <h2><a id="link-store" href="store.html">Store</a></h2>
@@ -135,20 +134,8 @@
     </canvas>
   </div>
 
-    <div class="shell-content hide-content">
-
-      <div class="chapel-section">
-        <p class="chapel-text chapel-text-left">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-
-        <div class="chapel-video">
-          <video muted loop playsinline style="width:100%; height:auto; display:block; border-radius:var(--border-rad);">
-            <source src="images/Chapel/church.mp4" type="video/mp4">
-          </video>
-        </div>
-
-        <p class="chapel-text chapel-text-right">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-      </div>
-
+    <div class="shell-content hide-content" style="display:flex; align-items:center; justify-content:center; height:100%;">
+      <p style="text-align:center; font-family:var(--main-special-font); font-size:16px; margin:0;">for the love of the game</p>
     </div>
 
     <div id="chaser">
@@ -162,30 +149,6 @@
   <script src="outside.js"></script>
 
 <style>
-.chapel-section {
-  display: flex;
-  flex-direction: column;
-  gap: var(--body-margin);
-  align-items: center;
-  margin: var(--text-margin) 0;
-}
-.chapel-section .chapel-video {
-  width: 100%;
-  max-width: 500px;
-}
-@media (min-width: 768px) {
-  .chapel-section {
-    flex-direction: row;
-    align-items: flex-start;
-  }
-  .chapel-section .chapel-text {
-    flex: 1;
-  }
-  .chapel-section .chapel-video {
-    flex: 0 0 auto;
-    max-width: 40%;
-  }
-}
 #chaser {
   display: none;
   position: fixed;
