@@ -1224,10 +1224,13 @@ video {
   .mobile-menu {
     display: inline-block;
     cursor: pointer;
-    font-size: 24px;
-    padding: 8px 12px;
+    font-size: 11px;
+    padding: 4px 10px;
     line-height: 1;
     vertical-align: middle;
+    letter-spacing: 1px;
+    border: 1px solid var(--text-color);
+    text-transform: lowercase;
   }
 
   .mobile-menu-content-show {
@@ -1248,14 +1251,16 @@ video {
     position: absolute;
     top: var(--body-margin);
     right: var(--body-margin);
-    font-size: 28px;
+    font-size: 20px;
     cursor: pointer;
     z-index: 1;
     line-height: 1;
+    padding: 4px 8px;
+    font-family: var(--main-special-font);
   }
 
   .menu-poetry {
-    font-size: var(--small-text);
+    font-size: 18px;
     line-height: 1.6;
     padding: 2vh 5vw 4vh;
     text-align: center;
@@ -1267,15 +1272,16 @@ video {
     font-weight: lighter;
     width: 100%;
     margin: 0;
+    font-size: 14px;
   }
 
   .mobile-menu-content a {
     display: block;
     color: var(--text-color);
     text-decoration: none;
-    padding: 16px 0;
-    font-size: var(--medium-text);
-    line-height: 1.5;
+    padding: 8px 0;
+    font-size: 14px;
+    line-height: 1.2;
     width: 100%;
     text-align: center;
   }

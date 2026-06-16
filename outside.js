@@ -249,16 +249,15 @@ function init() {
               if (d < 0.1 || t - atkStart > 3000) {
                 cs = "wander";
                 atkEnd = t;
-                tx = Math.random() * (window.innerWidth - 60);
-                ty = Math.random() * (window.innerHeight - 60);
+                tx = cmx; ty = cmy;
                 chaserFrames[0].style.display = "block";
                 chaserFrames[1].style.display = "block";
                 chaserFrames[2].style.display = "none";
                 chaserFrames[3].style.display = "none";
               }
               tx = cmx; ty = cmy;
-              cx += (tx - cx) * 0.35;
-              cy += (ty - cy) * 0.35;
+              cx += (tx - cx) * 0.01;
+              cy += (ty - cy) * 0.01;
             }
             var fl = tx > cx ? "-1" : "1";
             chaserEl.style.transform = "translate(" + cx + "px, " + cy + "px) scaleX(" + fl + ")";
