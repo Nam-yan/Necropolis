@@ -69,3 +69,22 @@ nam-yan.github.io.
 - LCD theme: light pink palette (#f3e4ec bg, #1a060e text, #c4004a links)
   Glass sheen gradient on .shell, pink glow on hover, clean 1px borders
 - Mobile: full-screen overlay menu, poetry inside menu, no Support Us link
+
+=== PENDING: DEERTALK FEATURE (about.html) ===
+
+Add a talking deer animation to the about page.
+
+What:
+- Clicking "for the love of the game" text triggers a deertalk animation
+- Two SVGs (images/svgs/deertalk1.svg, deertalk2.svg) alternate at 300ms
+- Audio plays simultaneously: audio/om-nom-nom-om-nom-101soundboards.mp3
+- SVGs and audio are preloaded before animation starts (no buffers)
+- Close button (✕) or audio ending stops the animation
+- The trigger text hides during animation, reappears when done
+- SVGs scale to fit container (responsive)
+
+Implementation approach:
+- Self-contained in about.html: HTML, inline <style>, and inline <script>
+- Frame-switching pattern matches existing chaser animation pattern
+- Frame rate: 300ms
+- Vanilla JS, no frameworks

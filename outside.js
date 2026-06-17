@@ -252,7 +252,7 @@ function init() {
               tx = cmx; ty = cmy;
               cx += (tx - cx) * 0.01;
               cy += (ty - cy) * 0.01;
-            }
+             }
             var fl = tx > cx ? "-1" : "1";
             chaserEl.style.transform = "translate(" + cx + "px, " + cy + "px) scaleX(" + fl + ")";
             if (t - ct > 200) {

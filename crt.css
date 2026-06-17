@@ -295,3 +295,7 @@ h3 span.small.block {
     }
 
 }
+
+#deertalk-frames .deertalk-frame {
+  filter: invert(0.87) !important;
+}
